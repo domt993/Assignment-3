@@ -1,0 +1,171 @@
+/*I edited the height of the html page so that I have some more space under the movie title on the html page
+otherwise id have no space for the movie text at the bottom with all the people
+the html image does repeat at the bottom*/
+html {
+    background-image: url("../img/tron-no-text.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 2250px;
+}
+/*making the height a bit larger so I can have text under the title
+declaring the columns and the areas of the grid*/
+body{
+    height:2750px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    'header header header'
+    'hero hero hero '
+    'main main main'
+    'footer footer footer';
+}
+header {
+    height: 200px;
+    width: auto;
+}
+/*Top text*/
+#text1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00C0FF;
+    text-align: right;
+    
+    
+}
+#text2 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00C0FF;
+    text-align: left;
+    
+}
+
+/*declaring the grid area for the movie text section
+making it a flexbox as well so that I can use place space between using the justify-content*/
+.movietext {
+    display: grid;
+    display: flex;
+    grid-area: hero;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    height: 500px;
+
+}
+
+/*adjusting the width to push over the text to the center more*/
+#top-left-text {
+    width: 600px;
+}
+/*I had to use google to figure out how to do make the content appear at the bottom of the container
+so essentially what it does it makes it a flex container and then changes the direction of the flex
+so rather than making the content from stacked to horizontal, it keeps it stacked
+then it makes it aligned at the end of the flexbox
+*/
+#top-right-text {
+    width: 600px;
+    height: 73%;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+
+}
+/*top text alignment*/
+.movietext > #top-left-text > #text1 {
+    justify-content: right;
+}
+
+.movietext > #top-right-text > #text2 {
+    justify-content: left;
+
+}
+/*declaring the grid area for main and making its height large so that the footer gets pushed down under the title*/
+main {
+    display: grid;
+    grid-area: main;
+    height: 1200px;
+}
+/*footer */
+footer {
+    display: grid;
+    grid-area: footer;
+    height: 450px;
+    width: auto;
+    align-items: center;
+    justify-items: center;
+}
+/*Styling and resizing of the bottom texts (1,2,3,4)
+they are seperated into 4 sections to make it a bit easier to style and achieve the look i need*/
+#bottom-text {
+    font-family: "Orbitron", sans-serif;
+    height: 15px;
+    width: 75%;
+    color: #f8f8f8;
+    align-items: center;
+    justify-items: center;
+}
+
+
+#bottom-text-2 {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
+    height: 70px;
+    width: 75%;
+    font-family: "Orbitron", sans-serif;
+    color: #f8f8f8;
+}
+
+
+#bottom-text-3 {
+    display: flex;
+    font-family: "Orbitron", sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 75%;
+    font-size: 7px;
+    font-weight: lighter;
+    color: #f8f8f8;
+    margin-top: 0px;
+}
+
+#bottom-text-4 {
+    margin-top: 0px;
+    display: flex;
+    font-family: "Orbitron", sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    width: 75%;
+    font-size: 7px;
+    font-weight: lighter;
+    color: #f8f8f8;
+}
+
+/*Songs by journey image and dolby stereo image resizing*/
+#journey, #dolby {
+    height: 15px;
+    width: auto;
+}
+
+/*PG image resizing*/
+#PG {
+    height: 25px;
+    width: auto;
+}
+
+/*I tried to use a class to do this however, the css was not applying when I used a class so I used ID*/
+#s1, #s2, #s3, #s4, #s5, #s6, #s7, #s8, #s9, #s10, #s11 {
+    font-size: 7px;
+    font-weight: lighter;
+}
+
+
+
+
+
